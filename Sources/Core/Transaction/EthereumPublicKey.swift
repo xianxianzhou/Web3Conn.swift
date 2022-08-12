@@ -142,7 +142,14 @@ public final class EthereumPublicKey {
         guard let vUInt = v.quantity.makeBytes().bigEndianUInt, vUInt <= Int32.max else {
             throw Error.signatureMalformed
         }
-        let v = Int32(vUInt)
+        var v = Int32(vUInt)
+        if v >= 27 && v <= 30 {
+            v -= 27
+        } else if v >= 31 && v <= 34 {
+            v -= 31
+        } else if v >= 35 && v <= 38 {
+            v -= 35
+        }
 
         for _ in 0..<(32 - r.count) {
             r.insert(0, at: 0)

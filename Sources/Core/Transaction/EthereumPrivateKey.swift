@@ -244,7 +244,7 @@ public final class EthereumPrivateKey {
             throw Error.internalError
         }
 
-        return (v: UInt(recid), r: Array(output64[0..<32]), s: Array(output64[32..<64]))
+        return (v: UInt(recid + 27), r: Array(output64[0..<32]), s: Array(output64[32..<64]))
     }
 
     /**
