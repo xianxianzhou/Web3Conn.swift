@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'WalletConnectWeb3'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'Web3 library for Swift. Sign transactions and interact with Smart Contracts in the Ethereum Network.'
 
   s.description      = <<-DESC
@@ -27,5 +27,6 @@ HTTP RPC interface provided by this library or a custom RPC interface
   s.dependency 'secp256k1.swift', '~> 0.1.1'
 
   s.source_files  = "Sources/Core/*/*.swift"
+  s.module_name = "Web3"
 
 end
