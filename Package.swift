@@ -21,9 +21,6 @@ let package = Package(
     ],
     dependencies: [
         // Core dependencies
-        .package(url: "https://github.com/attaswift/BigInt.git", from: "5.0.0"),
-        .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", from: "1.0.0"),
-        .package(name: "secp256k1", url: "https://github.com/Boilertalk/secp256k1.swift.git", from: "0.1.1"),
 
         // PromiseKit dependency
         .package(url: "https://github.com/mxcl/PromiseKit.git", from: "6.0.0"),
@@ -37,7 +34,6 @@ let package = Package(
             name: "Web3",
             dependencies: [
                 .product(name: "BigInt", package: "BigInt"),
-                .product(name: "secp256k1", package: "secp256k1"),
             ],
             path: "Sources",
             sources: ["Core", "FoundationHTTP"]),
